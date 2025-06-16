@@ -1,22 +1,16 @@
 import { useState } from "react";
 import { SquareButton } from "../SquareButton/SquareButton";
+import { useTask } from "../../contexts/TaskContext";
 
-interface TaskInputProps {
-  onTaskAdded: (taskLabel: string) => void;
-}
-
-// Responsável somente por enviar o valor que foi escrito dentro do input
-export const TaskInput: React.FunctionComponent<TaskInputProps> = ({
-  onTaskAdded,
-}) => {
-  // Tipificando a função como um componente react -> O TS vai entender que tem todas propriedade de um componente react. <TaskInputProps> é o componente reac que possui essas Props
+export const TaskInput = () => {
   const [taskInput, setTaskInput] = useState("");
+  const { addTask } = useTask();
 
   const handleAddTask = () => {
     const taskLabel = taskInput.trim();
 
     if (!taskLabel) return;
-    onTaskAdded(taskLabel); // Avisar pro pai que quer adicionar // onTaskAdded(taskLabel) = O handleTaskAdded
+    addTask(taskLabel);
     setTaskInput("");
   };
 
