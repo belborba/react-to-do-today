@@ -17,10 +17,10 @@ const STORAGE_KEY = "themeContextKey";
 
 /* ThemeContext vai precisar receber dados de um useState,
 já que vamos precisar alterar o estado para funcionar*/
-interface ThemeContext {
+type ThemeContext = {
   theme: string;
   setTheme: (newTheme: string) => void; // Precisa receber como parâmetro o valor do tema.
-}
+};
 
 export const ThemeContext = createContext<ThemeContext | null>(null); // Passamos o tipo de um hook nativo por <> (Generic Type Argument)
 // Inicialmente, o contexto geralmente é null, e depois é atribuído com o valor real via Provider.
@@ -29,7 +29,7 @@ export const ThemeContext = createContext<ThemeContext | null>(null); // Passamo
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const initialTheme = localStorage.getItem(STORAGE_KEY) || "dark";
 
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, setTheme] = useState<string>(initialTheme);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, theme);

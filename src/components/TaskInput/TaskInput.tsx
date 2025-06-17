@@ -17,7 +17,8 @@ export const TaskInput = () => {
   return (
     <div className="relative w-full">
       <input
-        className="bg-zinc-800 p-5 pr-12 rounded-2xl w-full text-zinc-50 outline-none focus:ring-2 focus:ring-lime-300"
+        className="p-5 pr-12 rounded-2xl w-full outline-none focus:ring-2 focus:ring-lime-300
+        bg-zinc-200/70 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-50"
         type="text"
         placeholder="What are the plans for today?"
         value={taskInput}
@@ -27,3 +28,9 @@ export const TaskInput = () => {
     </div>
   );
 };
+
+/*
+className={`${
+          isDark ? "bg-zinc-800 text-zinc-50" : "bg-zinc-200/70 text-zinc-800"
+        } p-5 pr-12 rounded-2xl w-full outline-none focus:ring-2 focus:ring-lime-300`}
+*/

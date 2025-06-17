@@ -1,12 +1,14 @@
 @import "tailwindcss";
+@config "../../tailwind.config.js";
+
+@config {
+  darkmode: "class";
+}
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif, Avenir, Helvetica, Arial, system-ui;
   line-height: 1.5;
   font-weight: 400;
-
-  background-color: #0000;
-
   font-synthesis: none;
 }
 
@@ -20,5 +22,3 @@
     display: none;
   }
 }
-
-/* Excluir o @layer pra ver se funciona */
