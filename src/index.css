@@ -1,9 +1,4 @@
 @import "tailwindcss";
-@config "../../tailwind.config.js";
-
-@config {
-  darkmode: "class";
-}
 
 :root {
   font-family: sans-serif, Avenir, Helvetica, Arial, system-ui;
