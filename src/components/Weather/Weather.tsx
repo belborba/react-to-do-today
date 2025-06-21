@@ -46,9 +46,9 @@ export const Weather = () => {
   return (
     <>
       {loading && <p>Carregando clima...</p>}
-      {error && <p className="text-zinc-50">{error}</p>}
+      {error && <p className="text-zinc-800 dark:text-zinc-50">{error}</p>}
       {!loading && weather && (
-        <div className="flex gap-3.5 items-center">
+        <div className="flex gap-3.5 items-center text-zinc-800 dark:text-zinc-50">
           <p>
             {weather.locationName}, {weather.country}
           </p>
@@ -57,7 +57,9 @@ export const Weather = () => {
             src={weather.icon}
             alt="Ícone do clima"
           />
-          <p>{weather.temperature}°C</p>
+          <p className="text-zinc-800 dark:text-zinc-50">
+            {weather.temperature}°C
+          </p>
         </div>
       )}
     </>

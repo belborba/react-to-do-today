@@ -19,7 +19,7 @@ export const ThemeButton = () => {
         gap-4 p-1 transition duration-500 ease-in-out cursor-pointer relative
         ${isDark ? "bg-zinc-800 items-end" : "bg-zinc-300 items-start"}`}
     >
-      <span className="absolute w-8 h-8 flex items-center justify-center p-1.5 bg-lime-300 rounded-full">
+      <span className="absolute w-8 h-8 flex items-center justify-center p-1.5 dark:bg-lime-300 bg-zinc-800 rounded-full">
         <img src={isDark ? dark : light} />
       </span>
     </button>

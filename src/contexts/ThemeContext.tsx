@@ -32,6 +32,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<string>(initialTheme);
 
   useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
@@ -57,4 +62,9 @@ export const useTheme = () => useContext(ThemeContext); //Hook para usar o Conte
 /*
 se não usa a função dentro do useState o localStorage.getItem vai ser executado toda vez que o
 componente for recriado (mesmo que o React nem use o valor depois).
+*/
+
+/*
+Vamos precisar que o contexto manipule a class de html do tailwind.
+Parar de verificar o sistema operacional.
 */

@@ -1,6 +1,5 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { useTheme } from "../../contexts/ThemeContext";
 
 interface SortableTaskItemProps {
   id: string;
@@ -26,10 +25,6 @@ export const SortableTaskItem = ({
     isDragging,
   } = useSortable({ id });
 
-  const themeCtx = useTheme();
-
-  const isDark = themeCtx?.theme === "dark";
-
   const style = {
     transform: CSS.Transform.toString(transform),
     transition,
@@ -43,24 +38,16 @@ export const SortableTaskItem = ({
       style={style}
       {...attributes}
       {...listeners}
-      className={`w-full flex gap-4 justify-between items-center ${
-        isDark
-          ? "bg-zinc-800 hover:bg-zinc-700"
-          : "bg-zinc-50/70 hover:bg-zinc-50"
-      } p-4 rounded-2xl`}
+      className="w-full flex gap-4 justify-between items-center dark:bg-zinc-800 dark:hover:bg-zinc-700 bg-zinc-50/70 hover:bg-zinc-50 p-4 rounded-2xl"
     >
       <div className="flex justify-start items-center">
         <input
           type="checkbox"
           checked={done}
-          className="accent-lime-300 rounded-md w-[24px] h-[24px]"
+          className="dark:accent-lime-300 accent-zinc-800 rounded-md w-[24px] h-[24px]"
           onChange={onToggle}
         />
-        <p
-          className={`${
-            isDark ? "text-zinc-50" : "text-zinc-800"
-          } rounded-2xl inline pl-4`}
-        >
+        <p className="dark:text-zinc-50 text-zinc-800 rounded-2xl inline pl-4">
           {label}
         </p>
       </div>

@@ -17,3 +17,15 @@
     display: none;
   }
 }
+
+@custom-variant dark (&:where(.dark, .dark *)); //Alteração
+
+/*
+Não tem como integrar o Tailwind diretamente com o Context.
+Temos que fazer o TailWind parar de verifica no navegador se está no modo light | dark
+E começar a verificar um class específica dentro da tag <html>
+Ir nas configurações do TailWind.
+
+document.documentElement.classList.add('dark') -> Adiciona a class dentro da tag HTML
+
+*/
