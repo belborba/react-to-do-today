@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { arrayMove } from "@dnd-kit/sortable";
@@ -19,14 +19,34 @@ interface TaskContextData {
 
 const TaskContext = createContext<TaskContextData>({} as TaskContextData);
 
+// Chave para armazenar as tarefas no localStorage
+const STORAGE_KEY = "tasksContextKey";
+
 interface TaskProviderProps {
   children: ReactNode;
 }
 
 export function TaskProvider({ children }: TaskProviderProps) {
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: "3729183721", label: "Exemplo: Comprar Bolo", done: false },
-  ]);
+  // Função para obter tarefas iniciais do localStorage
+  const getInitialTasks = (): Task[] => {
+    const storedTasks = localStorage.getItem(STORAGE_KEY);
+    if (storedTasks) {
+      try {
+        return JSON.parse(storedTasks);
+      } catch (error) {
+        console.error("Erro ao carregar tarefas do localStorage:", error);
+      }
+    }
+    // Tarefa de exemplo se não houver dados salvos
+    return [{ id: "3729183721", label: "Example: Buy a cake", done: false }];
+  };
+
+  const [tasks, setTasks] = useState<Task[]>(getInitialTasks);
+
+  // Salvar tarefas no localStorage sempre que elas mudarem
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (label: string) => {
     const newTask = {

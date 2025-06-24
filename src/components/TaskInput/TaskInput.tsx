@@ -33,9 +33,3 @@ export const TaskInput = () => {
     </div>
   );
 };
-
-/*
-className={`${
-          isDark ? "bg-zinc-800 text-zinc-50" : "bg-zinc-200/70 text-zinc-800"
-        } p-5 pr-12 rounded-2xl w-full outline-none focus:ring-2 focus:ring-lime-300`}
-*/

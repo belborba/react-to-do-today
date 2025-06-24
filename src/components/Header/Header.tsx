@@ -1,8 +1,9 @@
 import LogoDark from "../../assets/images/logo-dark.svg?react";
 import LogoLight from "../../assets/images/logo-light.svg?react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { MessageButton } from "../../MessageButton/MessageButton";
+import { LocalDate } from "../LocalDate/LocalDate";
 import { ThemeButton } from "../ThemeButton/ThemeButton";
-import { Weather } from "../Weather/Weather";
 
 export const Header = () => {
   const themeCtx = useTheme();
@@ -14,7 +15,8 @@ export const Header = () => {
       {isDark && <LogoDark />}
       {!isDark && <LogoLight />}
       <div className="flex gap-3 items-center">
-        <Weather />
+        <MessageButton />
+        <LocalDate />
         <ThemeButton />
       </div>
     </div>

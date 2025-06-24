@@ -12,7 +12,7 @@ export const Weather = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const API_KEY = "b79c6a2cde464fa480000506251906";
+  const API_KEY = "";
 
   const getWeather = async () => {
     try {
