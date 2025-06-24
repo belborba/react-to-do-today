@@ -1,7 +1,7 @@
 import LogoDark from "../../assets/images/logo-dark.svg?react";
 import LogoLight from "../../assets/images/logo-light.svg?react";
 import { useTheme } from "../../contexts/ThemeContext";
-import { MessageButton } from "../../MessageButton/MessageButton";
+import { MessageButton } from "../MessageButton/MessageButton";
 import { LocalDate } from "../LocalDate/LocalDate";
 import { ThemeButton } from "../ThemeButton/ThemeButton";
 
