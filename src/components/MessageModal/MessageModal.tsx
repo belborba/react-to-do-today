@@ -16,7 +16,7 @@ export const MessageModal = ({ message, onClose }: MessageModalProps) => {
           X
         </button>
         <span className="w-[80px] y-auto">
-          <Clover />
+          <Clover className="text-zinc-800 dark:text-lime-300" />
         </span>
         <p className=" text-2xl italic text-zinc-700 dark:text-zinc-200 mb-6">
           {message}

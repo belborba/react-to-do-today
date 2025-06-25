@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { messagesData } from "../../data/Message";
 import { MessageModal } from "../MessageModal/MessageModal";
-import CloverOff from "../../assets/icons/clover-off.svg?react";
-import CloverOn from "../../assets/icons/clover-on.svg?react";
+import Clover from "../../assets/icons/clover-on.svg?react";
 
 export const MessageButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); //Estado para verificar se a Modal está ativa ou não.
@@ -18,6 +17,10 @@ export const MessageButton = () => {
     if (savedDate === today && savedMessage) {
       setMessage(savedMessage);
       setVerifyDay(true);
+    } else {
+      setVerifyDay(false);
+      setMessage("");
+      localStorage.removeItem("savedMessage");
     }
   }, [today]); // Adiciona today como dependência (toda vez que a data alterar será executado)
 
@@ -40,9 +43,17 @@ export const MessageButton = () => {
     <>
       <button
         onClick={openModal}
-        className=" relative w-8 h-8 flex items-center justify-center p-1.5 dark:bg-lime-300 bg-zinc-800 rounded-full cursor-pointer"
+        className={`relative w-8 h-8 flex items-center justify-center p-1.5 ${
+          verifyDay
+            ? "dark:bg-zinc-500 bg-zinc-500"
+            : "bg-zinc-800 dark:bg-lime-300"
+        } rounded-full cursor-pointer`}
       >
-        {verifyDay ? <CloverOff /> : <CloverOn />}
+        {verifyDay ? (
+          <Clover className="text-zinc-300 dark:text-zinc-300" />
+        ) : (
+          <Clover className="text-lime-300 dark:text-zinc-800" />
+        )}
       </button>
       {isModalOpen && (
         <MessageModal message={message} onClose={() => setIsModalOpen(false)} />
