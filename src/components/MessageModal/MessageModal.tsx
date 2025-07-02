@@ -11,7 +11,7 @@ export const MessageModal = ({ message, onClose }: MessageModalProps) => {
       <div className="flex flex-col items-center gap-5 w-3/4 bg-white/90 dark:bg-zinc-900 dark:text-white p-8 border dark:border-zinc-700 rounded-2xl max-w-sm text-center">
         <button
           onClick={onClose}
-          className="self-end text-zinc-800 dark:text-zinc-50 px-4 py-2 cursor-pointer rounded-2xl transition"
+          className="self-end text-zinc-800 dark:text-zinc-50 px-4 py-2 rounded-2xl transition"
         >
           X
         </button>

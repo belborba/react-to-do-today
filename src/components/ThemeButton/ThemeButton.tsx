@@ -5,7 +5,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 export const ThemeButton = () => {
   const themeCtx = useTheme();
 
-  const isDark = themeCtx?.theme === "dark"; // Apenas uma variável para facilitar a leitura
+  const isDark = themeCtx?.theme === "dark";
 
   const handleTheme = () => {
     if (!themeCtx) return;
@@ -16,7 +16,7 @@ export const ThemeButton = () => {
     <button
       onClick={handleTheme}
       className={`w-[80px] h-[40px] rounded-full flex flex-col items-end
-        gap-4 p-1 transition duration-200 ease-in-out cursor-pointer relative
+        gap-4 p-1 transition duration-200 ease-in-out relative
         ${isDark ? "bg-zinc-700 items-end" : "bg-zinc-300 items-start"}`}
     >
       <span className="absolute w-8 h-8 flex items-center justify-center p-1.5 dark:bg-violet-400 bg-zinc-700 rounded-full transition duration-500 ease-in-out">
@@ -25,7 +25,3 @@ export const ThemeButton = () => {
     </button>
   );
 };
-
-// Removi o useState(toggled) pq o estado do botão depende diretamente do tema global, não precisa usar useStateLocal
-// O botão agora alterna o estado de theme entre light e dark, atualizando o contexto e persistindo no localStorage
-// O ícone tb muda com base no tema atual.

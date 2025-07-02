@@ -47,7 +47,7 @@ export const MessageButton = () => {
           verifyDay
             ? "dark:bg-zinc-500 bg-zinc-500"
             : "bg-zinc-800 dark:bg-violet-400"
-        } rounded-full cursor-pointer`}
+        } rounded-full`}
       >
         {verifyDay ? (
           <Clover className="text-zinc-300 dark:text-zinc-300" />

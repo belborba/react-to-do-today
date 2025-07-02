@@ -2,8 +2,8 @@ import { useTask } from "../../contexts/TaskContext";
 import {
   DndContext,
   closestCenter,
-  PointerSensor,
-  TouchSensor, // ✅ Importado aqui
+  MouseSensor,
+  TouchSensor,
   useSensor,
   useSensors,
 } from "@dnd-kit/core";
@@ -18,12 +18,17 @@ export const TaskList = () => {
   const { tasks, reorderTasks, deleteTask, toggleTask } = useTask();
 
   const sensors = useSensors(
-    useSensor(PointerSensor, {
+    useSensor(MouseSensor, {
       activationConstraint: {
         distance: 8,
       },
     }),
-    useSensor(TouchSensor) // ✅ Touch sensor adicionado aqui
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 250,
+        tolerance: 5,
+      },
+    })
   );
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -37,7 +42,7 @@ export const TaskList = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center rounded-2xl overflow-y-scroll scrollbar-hidden">
+    <div className="w-full h-full flex touch-manipulation flex-col items-center rounded-2xl overflow-y-scroll scrollbar-hidden">
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
