@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# React To-Do Today
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma lista de tarefas feita em React.js que armazena suas tarefas no `localStorage` e exibe uma mensagem motivacional diferente a cada dia. Disponível em dark e light mode!
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💜 Funcionalidades
 
-## Expanding the ESLint configuration
+✔️ Adicionar e remover tarefas <br>
+✔️ Marcar tarefas como concluídas <br>
+✔️ Reordenar tarefas com drag-and-drop (mouse e touch) <br>
+✔️ Mensagem motivacional diária <br>
+✔️ Dark mode <br>
+✔️ Armazenamento local (localStorage) <br>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<br>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📸 Demonstração
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<img src="https://github.com/user-attachments/assets/0d850ff1-7a85-40cf-bdc3-fe6c619380fb" width="500" alt="Demonstração da aplicação" />
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+<br>
+<br>
+
+## 🤖 Tecnologias
+
+✔️ React.js <br>
+✔️ TypeScript <br>
+✔️ Tailwind CSS <br>
+✔️ @dnd-kit (drag-and-drop) <br>
+✔️ Vite
+
+<br>
+
+## 🚀 Como rodar localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/belborba/react-to-do-today.git
+   ```
+
+2. Acesse a pasta do projeto:
+   ```bash
+   cd react-to-do-today
+   ```
+
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+4. Rode o projeto:
+   ```bash
+   npm run dev
+   ```
+
+5. Acesse no navegador:
+   ```
+   http://localhost:5173
+   ```
+<br>
+
+## 👩🏻‍💻 Autora
+
+Desenvolvido com 💜 por [@belborba](https://github.com/belborba) / ©️ Este projeto está sob a licença MIT.
