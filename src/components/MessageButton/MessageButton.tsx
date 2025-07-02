@@ -46,13 +46,13 @@ export const MessageButton = () => {
         className={`relative w-8 h-8 flex items-center justify-center p-1.5 ${
           verifyDay
             ? "dark:bg-zinc-500 bg-zinc-500"
-            : "bg-zinc-800 dark:bg-lime-300"
+            : "bg-zinc-800 dark:bg-violet-400"
         } rounded-full cursor-pointer`}
       >
         {verifyDay ? (
           <Clover className="text-zinc-300 dark:text-zinc-300" />
         ) : (
-          <Clover className="text-lime-300 dark:text-zinc-800" />
+          <Clover className="text-zinc-300 dark:text-zinc-800" />
         )}
       </button>
       {isModalOpen && (

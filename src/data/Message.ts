@@ -3,9 +3,9 @@ interface DataProps {
 }
 
 export const messagesData: DataProps[] = [
-  { message: "Você é capaz de coisas incríveis!" },
-  { message: "Acredite em você. Todo dia é uma nova chance." },
-  { message: "Não desista. O começo é sempre o mais difícil." },
-  { message: "Seu esforço está te levando mais longe do que você imagina." },
-  { message: "Você já venceu só por não ter desistido!" },
+  { message: "You are capable of amazing things!" },
+  { message: "Believe in yourself. Every day is a new chance." },
+  { message: "Don't give up. The beginning is always the hardest." },
+  { message: "Your effort is taking you further than you think." },
+  { message: "You've already won just by not giving up!" },
 ];

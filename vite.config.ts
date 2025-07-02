@@ -30,4 +30,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/react-to-do-today/",
 });

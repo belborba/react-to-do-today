@@ -22,9 +22,9 @@ export const TaskInput = () => {
   return (
     <div className="relative w-full">
       <input
-        className="dark:bg-zinc-800 dark:text-zinc-50 bg-zinc-50 text-zinc-800 p-5 pr-12 rounded-2xl w-full outline-none focus:ring-2 dark:focus:ring-lime-300"
+        className="dark:bg-zinc-700 dark:text-zinc-50 sm:text-2xl bg-zinc-50 text-zinc-800 p-5 pr-12 rounded-2xl w-full outline-none focus:ring-2 dark:focus:ring-violet-300"
         type="text"
-        placeholder="What are the plans for today?"
+        placeholder="What are your plans for today?"
         value={taskInput}
         onChange={(e) => setTaskInput(e.target.value)}
         onKeyDown={handleKeyUpAction}

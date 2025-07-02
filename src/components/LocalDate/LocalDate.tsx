@@ -8,7 +8,7 @@ export const LocalDate = () => {
   });
 
   return (
-    <p className="bg-zinc-300 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-50 p-2 px-4 rounded-full">
+    <p className="bg-zinc-300 text-zinc-800 dark:bg-zinc-700 dark:text-zinc-50 p-2 px-4 rounded-full">
       {date}
     </p>
   );

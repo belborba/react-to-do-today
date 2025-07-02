@@ -23,7 +23,7 @@
   }
 }
 
-@custom-variant dark (&:where(.dark, .dark *)); //Alteração
+@custom-variant dark (&:where(.dark, .dark *));
 
 /*
 Não tem como integrar o Tailwind diretamente com o Context.
