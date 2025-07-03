@@ -5,9 +5,9 @@ import { ThemeButton } from "../ThemeButton/ThemeButton";
 
 export const Header = () => {
   return (
-    <div className="w-full flex flex-col items-center space-y-4 sm:flex-row sm:justify-between sm:items-start sm:space-y-0 border-zinc-300 dark:border-zinc-500 border-b pb-4">
+    <div className="flex w-full flex-col items-center space-y-4 border-b border-zinc-300 pb-4 sm:flex-row sm:items-start sm:justify-between sm:space-y-0 dark:border-zinc-500">
       <LogoLight className="text-zinc-800 dark:text-violet-400" />
-      <div className="flex gap-3 items-center">
+      <div className="flex items-center gap-3">
         <MessageButton />
         <LocalDate />
         <ThemeButton />

@@ -7,27 +7,21 @@ interface MessageModalProps {
 
 export const MessageModal = ({ message, onClose }: MessageModalProps) => {
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="flex flex-col items-center gap-5 w-3/4 bg-white/90 dark:bg-zinc-900 dark:text-white p-8 border dark:border-zinc-700 rounded-2xl max-w-sm text-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+      <div className="flex w-3/4 max-w-sm flex-col items-center gap-5 rounded-2xl border bg-white/90 p-8 text-center dark:border-zinc-700 dark:bg-zinc-900 dark:text-white">
         <button
           onClick={onClose}
-          className="self-end text-zinc-800 dark:text-zinc-50 px-4 py-2 rounded-2xl transition"
+          className="self-end rounded-2xl px-4 py-2 text-zinc-800 transition dark:text-zinc-50"
         >
           X
         </button>
-        <span className="w-1/4 y-auto">
+        <span className="y-auto w-1/4">
           <Clover className="text-zinc-800 dark:text-violet-400" />
         </span>
-        <p className=" sm:text-2xl md:text-2xl italic text-zinc-700 dark:text-zinc-200 mb-6">
+        <p className="mb-6 text-zinc-700 italic sm:text-2xl md:text-2xl dark:text-zinc-200">
           {message}
         </p>
       </div>
     </div>
   );
 };
-
-/*
-#RESPONSABILIDADE DO COMPONENTE#
-1. Receber a mensagem random do componente pai.
-2. Receber a função que altera o estado de renderização da modal.
-*/
