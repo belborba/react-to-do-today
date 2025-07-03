@@ -4,9 +4,9 @@ import { MessageModal } from "../MessageModal/MessageModal";
 import Clover from "../../assets/icons/clover-on.svg?react";
 
 export const MessageButton = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); //Estado para verificar se a Modal está ativa ou não.
-  const [message, setMessage] = useState(""); // O localStorage ou precisa renderizar uma nova mensagem e armazenar no localStorage
-  const [verifyDay, setVerifyDay] = useState(false); // Verifica se a mensagem já foi visualizada.
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [message, setMessage] = useState(""); 
+  const [verifyDay, setVerifyDay] = useState(false); 
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -22,7 +22,7 @@ export const MessageButton = () => {
       setMessage("");
       localStorage.removeItem("savedMessage");
     }
-  }, [today]); // Adiciona today como dependência (toda vez que a data alterar será executado)
+  }, [today]);
 
   const openModal = () => {
     if (message) {
@@ -61,8 +61,3 @@ export const MessageButton = () => {
     </>
   );
 };
-
-// Adicionar State que controla a visulação da mensagem.
-// Adicionar State que controlar a renderização da imagem.
-// Verificar se foi vista hoje e armazenar essa verificação no localStorage
-// Modal renderizada condicionalmente dentro da tela
