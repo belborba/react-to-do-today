@@ -28,7 +28,7 @@ export const TaskList = () => {
         delay: 250,
         tolerance: 5,
       },
-    })
+    }),
   );
 
   const handleDragEnd = (event: DragEndEvent) => {
@@ -42,7 +42,7 @@ export const TaskList = () => {
   };
 
   return (
-    <div className="w-full h-full flex touch-manipulation flex-col items-center rounded-2xl overflow-y-scroll scrollbar-hidden">
+    <div className="scrollbar-hidden flex h-full w-full touch-manipulation flex-col items-center rounded-2xl">
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
@@ -52,7 +52,7 @@ export const TaskList = () => {
           items={tasks.map((task) => task.id)}
           strategy={verticalListSortingStrategy}
         >
-          <ul className="w-full flex flex-col gap-4">
+          <ul className="flex w-full flex-col gap-4">
             {tasks.map((item) => (
               <SortableTaskItem
                 key={item.id}
