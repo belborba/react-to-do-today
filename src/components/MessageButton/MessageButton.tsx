@@ -22,7 +22,7 @@ export const MessageButton = () => {
       setMessage("");
       localStorage.removeItem("savedMessage");
     }
-  }, [today]); // Adiciona today como dependência (toda vez que a data alterar será executado)
+  }, [today]);
 
   const openModal = () => {
     if (message) {
@@ -61,8 +61,3 @@ export const MessageButton = () => {
     </>
   );
 };
-
-// Adicionar State que controla a visulação da mensagem.
-// Adicionar State que controlar a renderização da imagem.
-// Verificar se foi vista hoje e armazenar essa verificação no localStorage
-// Modal renderizada condicionalmente dentro da tela
