@@ -4,9 +4,9 @@ import { MessageModal } from "../MessageModal/MessageModal";
 import Clover from "../../assets/icons/clover-on.svg?react";
 
 export const MessageButton = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); //Estado para verificar se a Modal está ativa ou não.
-  const [message, setMessage] = useState(""); // O localStorage ou precisa renderizar uma nova mensagem e armazenar no localStorage
-  const [verifyDay, setVerifyDay] = useState(false); // Verifica se a mensagem já foi visualizada.
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [verifyDay, setVerifyDay] = useState(false);
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -43,9 +43,9 @@ export const MessageButton = () => {
     <>
       <button
         onClick={openModal}
-        className={`relative w-8 h-8 flex items-center justify-center p-1.5 ${
+        className={`relative flex h-8 w-8 items-center justify-center p-1.5 ${
           verifyDay
-            ? "dark:bg-zinc-500 bg-zinc-500"
+            ? "bg-zinc-500 dark:bg-zinc-500"
             : "bg-zinc-800 dark:bg-violet-400"
         } rounded-full`}
       >
