@@ -1,6 +1,6 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import DeleteIcon from "../../assets/icons/trash-icon.svg?react";
+import DeleteIcon from "@/assets/icons/trash-icon.svg?react";
 
 interface SortableTaskItemProps {
   id: string;

@@ -1,30 +1,14 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import type { ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { arrayMove } from "@dnd-kit/sortable";
-
-interface Task {
-  id: string;
-  label: string;
-  done: boolean;
-}
-
-interface TaskContextData {
-  tasks: Task[];
-  addTask: (label: string) => void;
-  deleteTask: (id: string) => void;
-  toggleTask: (id: string) => void;
-  reorderTasks: (oldIndex: number, newIndex: number) => void;
-}
 
 const TaskContext = createContext<TaskContextData>({} as TaskContextData);
 
 // Chave para armazenar as tarefas no localStorage
 const STORAGE_KEY = "tasksContextKey";
 
-interface TaskProviderProps {
-  children: ReactNode;
-}
+type TaskProviderProps = PropsWithChildren;
 
 export function TaskProvider({ children }: TaskProviderProps) {
   // Função para obter tarefas iniciais do localStorage
@@ -64,8 +48,8 @@ export function TaskProvider({ children }: TaskProviderProps) {
   const toggleTask = (id: string) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, done: !task.done } : task
-      )
+        task.id === id ? { ...task, done: !task.done } : task,
+      ),
     );
 
     setTimeout(() => {

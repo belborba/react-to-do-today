@@ -1,6 +1,6 @@
 import { useState, type KeyboardEvent } from "react";
-import { SquareButton } from "../SquareButton";
-import { useTask } from "../../contexts/TaskContext";
+import { SquareButton } from "./components/SquareButton";
+import { useTask } from "@/contexts/TaskContext";
 
 export const TaskInput = () => {
   const [taskInput, setTaskInput] = useState("");

@@ -12,8 +12,8 @@ import {
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 
-import { useTask } from "../../contexts/TaskContext";
-import { SortableTaskItem } from "../SortableTaskItem";
+import { useTask } from "@/contexts/TaskContext";
+import { SortableTaskItem } from "./components/SortableTaskItem";
 
 export const TaskList = () => {
   const { tasks, reorderTasks, deleteTask, toggleTask } = useTask();
