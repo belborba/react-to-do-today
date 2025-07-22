@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { messagesData } from "@/data/Message.ts";
+import { messagesData } from "@/data/Message";
 import { MessageModal } from "./components/MessageModal";
-import Clover from "@/assets/icons/clover-on.svg?react";
+import { CloverOn } from "@/assets/icons/clover-on";
 
 export const MessageButton = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,9 +50,9 @@ export const MessageButton = () => {
         } rounded-full`}
       >
         {verifyDay ? (
-          <Clover className="text-zinc-300 dark:text-zinc-300" />
+          <CloverOn className="text-zinc-300 dark:text-zinc-300" />
         ) : (
-          <Clover className="text-zinc-300 dark:text-zinc-800" />
+          <CloverOn className="text-zinc-300 dark:text-zinc-800" />
         )}
       </button>
       {isModalOpen && (

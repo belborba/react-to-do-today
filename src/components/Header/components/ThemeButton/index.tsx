@@ -1,5 +1,5 @@
-import dark from "@/assets/icons/dark-icon.svg";
-import light from "@/assets/icons/light-icon.svg";
+import { DarkIcon } from "@/assets/icons/dark-icon";
+import { LightIcon } from "@/assets/icons/light-icon";
 import { useTheme } from "@/contexts/ThemeContext";
 
 export const ThemeButton = () => {
@@ -18,7 +18,7 @@ export const ThemeButton = () => {
       className={`relative flex h-[40px] w-[80px] cursor-pointer flex-col items-end gap-4 rounded-full p-1 transition duration-200 ease-in-out ${isDark ? "items-end bg-zinc-700" : "items-start bg-zinc-300"}`}
     >
       <span className="absolute flex h-8 w-8 items-center justify-center rounded-full bg-zinc-700 p-1.5 transition duration-500 ease-in-out dark:bg-violet-400">
-        <img src={isDark ? dark : light} />
+        {isDark ? <DarkIcon /> : <LightIcon />}
       </span>
     </button>
   );

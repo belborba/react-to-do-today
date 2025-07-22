@@ -1,4 +1,4 @@
-import Clover from "@/assets/icons/clover-on.svg?react";
+import { CloverOn } from "@/assets/icons/clover-on";
 
 interface MessageModalProps {
   message: string;
@@ -16,7 +16,7 @@ export const MessageModal = ({ message, onClose }: MessageModalProps) => {
           X
         </button>
         <span className="y-auto w-1/4">
-          <Clover className="text-zinc-800 dark:text-violet-400" />
+          <CloverOn className="text-zinc-800 dark:text-violet-400" />
         </span>
         <p className="mb-6 text-zinc-700 italic sm:text-2xl md:text-2xl dark:text-zinc-200">
           {message}
