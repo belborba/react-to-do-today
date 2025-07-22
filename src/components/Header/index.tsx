@@ -1,7 +1,7 @@
-import LogoLight from "../../assets/images/logo-light.svg?react";
-import { MessageButton } from "../MessageButton";
-import { LocalDate } from "../LocalDate";
-import { ThemeButton } from "../ThemeButton";
+import LogoLight from "@/assets/images/logo-light.svg?react";
+import { MessageButton } from "./components/MessageButton";
+import { LocalDate } from "./components/LocalDate";
+import { ThemeButton } from "./components/ThemeButton";
 
 export const Header = () => {
   return (

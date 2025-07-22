@@ -1,6 +1,6 @@
-import dark from "../../assets/icons/dark-icon.svg";
-import light from "../../assets/icons/light-icon.svg";
-import { useTheme } from "../../contexts/ThemeContext";
+import dark from "@/assets/icons/dark-icon.svg";
+import light from "@/assets/icons/light-icon.svg";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export const ThemeButton = () => {
   const themeCtx = useTheme();

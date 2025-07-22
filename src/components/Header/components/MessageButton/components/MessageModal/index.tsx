@@ -1,4 +1,4 @@
-import Clover from "../../assets/icons/clover-on.svg?react";
+import Clover from "@/assets/icons/clover-on.svg?react";
 
 interface MessageModalProps {
   message: string;

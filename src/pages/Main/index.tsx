@@ -1,8 +1,8 @@
-import { Header } from "../../components/Header";
-import { TaskInput } from "../../components/TaskInput";
-import { TaskProvider } from "../../contexts/TaskContext";
+import { Header } from "@/components/Header";
+import { TaskInput } from "@/components/TaskInput";
+import { TaskProvider } from "@/contexts/TaskContext";
 import { DndContext } from "@dnd-kit/core";
-import { TaskList } from "../../components/TaskList";
+import { TaskList } from "@/components/TaskList";
 
 export const Main = () => {
   return (

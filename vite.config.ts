@@ -30,5 +30,10 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
   base: "/react-to-do-today/",
 });
