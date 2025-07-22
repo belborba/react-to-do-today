@@ -13,7 +13,7 @@ import {
 } from "@dnd-kit/sortable";
 
 import { useTask } from "../../contexts/TaskContext";
-import { SortableTaskItem } from "../SortableTaskItem/SortableTaskItem";
+import { SortableTaskItem } from "../SortableTaskItem";
 
 export const TaskList = () => {
   const { tasks, reorderTasks, deleteTask, toggleTask } = useTask();
@@ -58,16 +58,14 @@ export const TaskList = () => {
         >
           <ul className="flex w-full flex-col gap-4">
             {tasks.map(({ id, label, done }) => (
-              <li>
-                <SortableTaskItem
-                  key={id}
-                  id={id}
-                  label={label}
-                  done={done}
-                  onToggle={() => toggleTask(id)}
-                  onDelete={() => deleteTask(id)}
-                />
-              </li>
+              <SortableTaskItem
+                key={id}
+                id={id}
+                label={label}
+                done={done}
+                onToggle={() => toggleTask(id)}
+                onDelete={() => deleteTask(id)}
+              />
             ))}
           </ul>
         </SortableContext>

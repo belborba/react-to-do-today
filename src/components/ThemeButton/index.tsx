@@ -15,11 +15,9 @@ export const ThemeButton = () => {
   return (
     <button
       onClick={handleTheme}
-      className={`w-[80px] h-[40px] rounded-full flex flex-col items-end
-        gap-4 p-1 transition duration-200 ease-in-out relative
-        ${isDark ? "bg-zinc-700 items-end" : "bg-zinc-300 items-start"}`}
+      className={`relative flex h-[40px] w-[80px] cursor-pointer flex-col items-end gap-4 rounded-full p-1 transition duration-200 ease-in-out ${isDark ? "items-end bg-zinc-700" : "items-start bg-zinc-300"}`}
     >
-      <span className="absolute w-8 h-8 flex items-center justify-center p-1.5 dark:bg-violet-400 bg-zinc-700 rounded-full transition duration-500 ease-in-out">
+      <span className="absolute flex h-8 w-8 items-center justify-center rounded-full bg-zinc-700 p-1.5 transition duration-500 ease-in-out dark:bg-violet-400">
         <img src={isDark ? dark : light} />
       </span>
     </button>

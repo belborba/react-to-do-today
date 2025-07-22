@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { messagesData } from "../../data/Message";
-import { MessageModal } from "../MessageModal/MessageModal";
+import { MessageModal } from "../MessageModal";
 import Clover from "../../assets/icons/clover-on.svg?react";
 
 export const MessageButton = () => {
@@ -43,7 +43,7 @@ export const MessageButton = () => {
     <>
       <button
         onClick={openModal}
-        className={`relative flex h-8 w-8 items-center justify-center p-1.5 ${
+        className={`relative flex h-8 w-8 cursor-pointer items-center justify-center p-1.5 ${
           verifyDay
             ? "bg-zinc-500 dark:bg-zinc-500"
             : "bg-zinc-800 dark:bg-violet-400"

@@ -30,6 +30,7 @@ export const SortableTaskItem = ({
     transform: CSS.Transform.toString(transform),
     transition,
     opacity: isDragging ? 0.5 : 1,
+    cursor: isDragging ? "grabbing" : "grab",
   };
 
   return (
@@ -41,17 +42,17 @@ export const SortableTaskItem = ({
       }}
       {...listeners}
       {...attributes}
-      className="w-full flex gap-4 justify-between items-center dark:bg-zinc-700 dark:hover:bg-zinc-700 bg-zinc-50/70 hover:bg-zinc-50 p-4 rounded-2xl"
+      className="flex w-full items-center justify-between gap-4 rounded-2xl bg-zinc-50/70 p-4 hover:bg-zinc-50 dark:bg-zinc-700 dark:hover:bg-zinc-700"
     >
-      <div className="flex justify-start items-center">
+      <div className="flex items-center">
         <input
           type="checkbox"
           checked={done}
           onClick={(e) => e.stopPropagation()}
-          className="dark:accent-violet-400 accent-zinc-800 rounded-md w-[24px] h-[24px]"
+          className="h-[24px] w-[24px] rounded-md accent-zinc-800 dark:accent-violet-400"
           onChange={onToggle}
         />
-        <p className="dark:text-zinc-50 text-zinc-800 rounded-2xl inline pl-4">
+        <p className="inline rounded-2xl pl-4 text-zinc-800 dark:text-zinc-50">
           {label}
         </p>
       </div>

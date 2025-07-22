@@ -1,12 +1,9 @@
-import { MainContainer } from "./components/MainContainer/MainContainer";
+import { Main } from "./pages/Main";
 
 function App() {
   return (
-    <div
-      className="w-screen h-screen
-    text-zinc-50 bg-zinc-300 dark:bg-zinc-900 dark:text-zinc-800 p-4 flex items-center justify-center"
-    >
-      <MainContainer />
+    <div className="flex h-screen w-screen items-center justify-center bg-zinc-300 p-4 text-zinc-50 dark:bg-zinc-900 dark:text-zinc-800">
+      <Main />
     </div>
   );
 }

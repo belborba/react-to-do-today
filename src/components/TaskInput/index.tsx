@@ -1,5 +1,5 @@
 import { useState, type KeyboardEvent } from "react";
-import { SquareButton } from "../SquareButton/SquareButton";
+import { SquareButton } from "../SquareButton";
 import { useTask } from "../../contexts/TaskContext";
 
 export const TaskInput = () => {
@@ -22,7 +22,7 @@ export const TaskInput = () => {
   return (
     <div className="relative w-full">
       <input
-        className="dark:bg-zinc-700 dark:text-zinc-50 sm:text-2xl bg-zinc-50 text-zinc-800 p-5 pr-12 rounded-2xl w-full outline-none focus:ring-2 dark:focus:ring-violet-300"
+        className="w-full rounded-2xl bg-zinc-50 p-5 pr-12 text-zinc-800 outline-none focus:ring-2 sm:text-2xl dark:bg-zinc-700 dark:text-zinc-50 dark:focus:ring-violet-300"
         type="text"
         placeholder="What are your plans for today?"
         value={taskInput}
